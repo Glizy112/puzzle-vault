@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Control Center</title>
+    <style>
+        body { font-family: 'Courier New', monospace; background: #330000; color: #ff0000; text-align: center; padding-top: 100px; }
+        .danger-zone { border: 5px double #ff0000; display: inline-block; padding: 30px; }
+    </style>
+</head>
+<body>
+    <div class="danger-zone">
+        <h1>⚠️ ACCESS GRANTED ⚠️</h1>
+        <p>You have bypassed the JWT signature check using the "none" algorithm.</p>
+        <h2>THE ADMIN FLAG IS:</h2>
+        <h1 style="background: yellow; color: black; padding: 10px;">{{ secret }}</h1>
+    </div>
+    <br><br>
+    <a href="/logout" style="color: white;">Logout / Return Home</a>
+</body>
+</html>
